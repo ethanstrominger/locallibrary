@@ -58,7 +58,8 @@ SOCIALACCOUNT_PROVIDERS = {
         'APP': {
             'client_id': '1062122639559-sloc331ojcfe5p7bgvsbtelgu3jp5542.apps.googleusercontent.com',
             'secret': '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',
-            'key': ''
+            'key': '',
+            'redirect_uri': 'http://localhost:8000/accounts/google/login/callback/',
         }
     }
 }
