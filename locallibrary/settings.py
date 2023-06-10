@@ -149,12 +149,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
-# LOGIN_URL = "loginmain"
-# ADMIN_LOGIN_URL = "loginmain"
-# LOGIN_REDIRECT_URL = "home"
+LOGIN_URL = "loginmain"
+ADMIN_LOGIN_URL = "loginmain"
+LOGIN_REDIRECT_URL = "home"
 # ADMIN_LOGIN_REDIRECT_URL = "home"
 
-# LOGOUT_REDIRECT_URL = "loginmain"
+LOGOUT_REDIRECT_URL = "loginmain"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
