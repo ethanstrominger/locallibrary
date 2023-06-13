@@ -17,13 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
-from .views import login_view
+from .views import login_view, CustomLoginView
 
 urlpatterns = [
-    path('login/', login_view, name = "loginmain"),
-    path('accounts/login', login_view, name="loginmain2"),
-    path('accounts/', include('allauth.urls')),
-    path("admin/login/", login_view , name = "loginmai3"),
+    path('login/', CustomLoginView.as_view(), name = "loginmain"),
+   path('accounts/login/', CustomLoginView.as_view(), name='account_login'),
+     path('accounts/', include('allauth.urls')),
+    path("admin/login/", CustomLoginView.as_view(), name = "admin_login"),
     path("admin/", admin.site.urls),
     path("home/", TemplateView.as_view(template_name="dashboard/home.html"), name = "home"),
     # path("admin/", admin.site.urls),

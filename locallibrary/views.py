@@ -15,3 +15,14 @@ def login_view(request):
         else:
             messages.error(request, 'Invalid username or password.')
     return render(request, 'login.html')
+
+from allauth.account.views import LoginView
+from django.shortcuts import redirect
+
+class CustomLoginView(LoginView):
+    def get_success_url(self):
+        print('debug get success url')
+        redirect_to = self.request.POST.get('next', self.request.GET.get('next', ''))
+        if redirect_to:
+            self.redirect_field_value = redirect_to
+        return super().get_success_url()
